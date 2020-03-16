@@ -88,7 +88,7 @@ vector属于**顺序容器**，用于容纳**不定长**线性序列（即线性
 	main.obj : error LNK2001: unresolved external symbol "public: __thiscall CMenu::CMenu(class CMenu const &)" (??0CMenu@@QAE@ABV0@@Z)
 	Debug/try12.exe : fatal error LNK1120: 1 unresolved externals
 
-另外，如果没有重载拷贝构造函数实现深拷贝，在如下所示定义了一个新的CMenu对象后，编译器自动生成默认的拷贝构造函数浅拷贝此对象作为push_back函数的形参。然后，编译器调用析构函数释放`CMenu("卤鸡翅")`时分配的内存空间后，在`delete menuvec`时又调用析构函数释放menuvec中对应结点的内存空间时，因为此时为浅拷贝，两个CMenu对象的name指向同一内存空间，就存在**重复释放同一内存空间**的错误，造成栈溢出，从而报错。
+另外，如果没有重载拷贝构造函数实现深拷贝，在如下所示定义了一个新的CMenu对象后，编译器自动生成默认的拷贝构造函数浅拷贝此对象作为push_back函数的形参。然后，编译器调用析构函数释放`CMenu("卤鸡翅")`时分配的内存空间后，在`delete menuvec`时又调用析构函数释放menuvec中对应结点的内存空间时，因为此时为浅拷贝，两个CMenu对象的name指向同一内存空间，就存在**重复释放同一内存空间**的错误，从而报错。
 
 	vector <CMenu> *menuvec=new vector <CMenu>;
 	menuvec->push_back(CMenu("卤鸡翅"));

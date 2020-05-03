@@ -95,7 +95,7 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "HYJ",
+        href: "https://www.jianshu.com/u/5fbdf178fdbd"
     }
 ]

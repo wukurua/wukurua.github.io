@@ -32,13 +32,11 @@ tags:
 	{
 	    if(checked)
 	    {
-			//明文模式
-	        etPwd->setEchoMode(QLineEdit::Normal);
+	        etPwd->setEchoMode(QLineEdit::Normal);//明文模式
 	    }
 	    else
 	    {
-			//暗文模式
-	        etPwd->setEchoMode(QLineEdit::Password);
+	        etPwd->setEchoMode(QLineEdit::Password);//暗文模式
 	    }
 	}
 
